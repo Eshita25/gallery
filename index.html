@@ -103,6 +103,7 @@ margin-bottom: auto ;
       right : 5px;
       color:white;
       font-size: 32px;
+      background-color: #000;
     }
     .left {
       position : absolute ;
@@ -129,9 +130,32 @@ margin-bottom: auto ;
 </head>
 
 <body>
+  <script>
+    let x = document.getElementsByClassName("img");
+    let y = document.getElementsByClassName("show");
+    let imgSrc = "";
+    document.addEventListener("click",show(imgSrc));
+    document.addEventListener("click",close());
+   function show(imgSrc){
+    y[0].src = imgSrc;
+   for(let i =0;i<14;i++){
+    x[i].style.display = "none";
+
+   }
+   y[0].style.display="block";
+   }
+   function close(){
+    for(let i =0;i<14;i++){
+    x[i].style.display = "block";
+
+   }
+   y[0].style.display="none";
+   }
+   
+  </script>
   <div class="show">
     <img src = "img1.jpg" class="big">
-    <div class="close">
+    <div class="close" onclick = "close()">
      X
     </div>
     <div class="left">
@@ -142,59 +166,49 @@ margin-bottom: auto ;
     </div>
   </div>
   <div class="images">
-  <div class="img">
-    <img src = "img1.jpg " id = "img1" onclick="show()">
+  <div class="img" >
+    <img src = "img1.jpg "  onclick="show()">
 
   </div>
-  <script>
-    let x = document.getElementById("img1");
-    let y = document.getElementsByClassName("show");
-    document.addEventListener("click",show());
-   function show(e){
-   x.style.display="hide";
-   for(let i =0;i<14;i++){
-   y[i].style.display="block";
-   }
-   }
-  </script>
+  
     <div class="img" id="img2">
-      <img src="img2.jpg">
+      <img src="img2.jpg" onclick="show(img2.jpg)">
     </div>
     <div class="img" id="img3">
-      <img src="img3.jpg">
+      <img src="img3.jpg" onclick="show()">
     </div>
     <div class="img" id="img4">
-      <img src="img4.jpg">
+      <img src="img4.jpg" onclick="show()">
     </div>
     <div class="img" id="img5">
-      <img src="img5.jpg">
+      <img src="img5.jpg" onclick="show()">
     </div>
     <div class="img" id="img6">
-      <img src="img6.jpg">
+      <img src="img6.jpg" onclick="show()">
     </div>
     <div class="img" id="img7">
-      <img src="img7.jpg">
+      <img src="img7.jpg" onclick="show()">
     </div>
     <div class="img" id="img8">
-      <img src="img8.jpg">
+      <img src="img8.jpg" onclick="show()">
     </div>
     <div class="img" id="img9">
-      <img src="img9.jpg">
+      <img src="img9.jpg" onclick="show()">
     </div>
     <div class="img" id="img10">
-      <img src="img10.jpg">
+      <img src="img10.jpg" onclick="show()">
     </div>
     <div class="img" id="img11">
-      <img src="img11.jpg">
+      <img src="img11.jpg" onclick="show()">
     </div>
     <div class="img" id="img12">
-      <img src="img12.jpg">
+      <img src="img12.jpg" onclick="show()">
     </div>
     <div class="img" id="img13">
-      <img src="img13.jpg">
+      <img src="img13.jpg" onclick="show()">
     </div>
     <div class="img" id="img14 ">
-      <img src="img14.jpg">
+      <img src="img14.jpg" onclick="show()">
     </div>
 
   </div>
